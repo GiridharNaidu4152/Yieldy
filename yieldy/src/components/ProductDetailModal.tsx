@@ -147,13 +147,13 @@ export default function ProductDetailModal({ product, onClose, onAddToCart, onBu
           {/* Left: Product Info + Configurator */}
           <div className="lg:col-span-7 p-6 sm:p-8 lg:overflow-y-auto lg:max-h-[90vh]">
             <div className="flex flex-col sm:flex-row items-start gap-5 mb-8 pb-6 border-b border-gray-100">
-              <div className="relative w-full sm:w-36 h-36 rounded-xl overflow-hidden border border-gray-200 flex-shrink-0 bg-slate-100">
+              <div className="relative w-full sm:w-40 h-40 rounded-xl overflow-hidden border border-gray-200 flex-shrink-0 bg-slate-50 p-2">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
-                  sizes="(max-width: 640px) 100vw, 144px"
-                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, 160px"
+                  className="object-contain p-2"
                 />
               </div>
               <div>

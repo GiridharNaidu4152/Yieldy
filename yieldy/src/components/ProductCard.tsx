@@ -15,13 +15,13 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
   return (
     <div className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:border-emerald-300 transition-all duration-300 flex flex-col justify-between">
       <div>
-        <div className="relative overflow-hidden bg-slate-100 h-52 w-full">
+        <div className="relative overflow-hidden bg-slate-50/80 border-b border-gray-100 h-56 w-full flex items-center justify-center">
           <Image
             src={product.image}
             alt={product.name}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
             priority={product.id <= 3}
           />
           <div className="absolute top-3 left-3 flex flex-wrap gap-2 z-10">
