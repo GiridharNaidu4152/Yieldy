@@ -1,7 +1,7 @@
 'use client';
 
 import { Product } from '@/data/products';
-import { ShieldCheck, Cpu, HardDrive, Monitor, CheckCircle2, Award } from 'lucide-react';
+import { ShieldCheck, Cpu, HardDrive, Monitor, CheckCircle2, Award, SlidersHorizontal } from 'lucide-react';
 import Image from 'next/image';
 
 interface ProductCardProps {
@@ -22,7 +22,7 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover group-hover:scale-105 transition-transform duration-500"
-            priority={product.id <= 2}
+            priority={product.id <= 3}
           />
           <div className="absolute top-3 left-3 flex flex-wrap gap-2 z-10">
             <span className="bg-emerald-600 text-white text-xs font-semibold px-2.5 py-1 rounded-full shadow-sm">
@@ -78,16 +78,24 @@ export default function ProductCard({ product, onSelect }: ProductCardProps) {
       </div>
 
       <div className="p-5 pt-0">
-        <div className="flex items-end justify-between pt-3 border-t border-gray-100">
-          <div>
-            <p className="text-xs text-slate-400 line-through">MRP ₹{product.originalPrice.toLocaleString('en-IN')}</p>
-            <p className="text-2xl font-bold text-slate-900">₹{product.basePrice.toLocaleString('en-IN')}</p>
+        <div className="pt-3 border-t border-gray-100">
+          <div className="flex items-baseline justify-between mb-3">
+            <div>
+              <span className="text-[11px] uppercase tracking-wider text-slate-400 font-medium block">Special Price</span>
+              <p className="text-2xl font-extrabold text-slate-900 tracking-tight">₹{product.basePrice.toLocaleString('en-IN')}</p>
+            </div>
+            <div className="text-right">
+              <span className="text-xs text-slate-400 line-through block">MRP ₹{product.originalPrice.toLocaleString('en-IN')}</span>
+              <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200/60">Save {savings}%</span>
+            </div>
           </div>
+
           <button
             onClick={() => onSelect(product)}
-            className="bg-slate-900 hover:bg-emerald-600 text-white text-xs sm:text-sm font-semibold px-4 sm:px-5 py-2.5 rounded-xl transition-all duration-200 shadow-sm active:scale-95 cursor-pointer"
+            className="w-full bg-slate-900 hover:bg-emerald-600 text-white text-sm font-bold py-3.5 px-6 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md flex items-center justify-center gap-2 active:scale-[0.98] cursor-pointer"
           >
-            Customize & Buy
+            <span>Customize & Buy</span>
+            <SlidersHorizontal className="w-4 h-4 text-emerald-400" />
           </button>
         </div>
       </div>
