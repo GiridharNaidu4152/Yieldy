@@ -152,7 +152,7 @@ export default function Home() {
         <Hero onSearch={handleSearch} onNavigate={handleNavigate} />
 
         {/* Certified Quality Guarantee Banner */}
-        <section className="bg-slate-900 border-t border-slate-800 py-4 text-xs text-slate-300">
+        <section className="bg-zinc-950 border-t border-zinc-800 py-4 text-xs text-zinc-300">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
@@ -172,14 +172,14 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
               <div>
                 <span className="text-xs font-bold text-emerald-600 uppercase tracking-wider">Enterprise Catalog</span>
-                <h2 className="text-3xl font-extrabold text-slate-900 mt-1">Available Certified Systems</h2>
-                <p className="text-slate-500 text-sm mt-1">
+                <h2 className="text-3xl font-extrabold text-zinc-900 mt-1">Available Certified Systems</h2>
+                <p className="text-zinc-500 text-sm mt-1">
                   Showing {filteredProducts.length} verified devices with dynamic upgrade options.
                 </p>
               </div>
               <button
                 onClick={() => setFilterSidebarOpen(true)}
-                className="lg:hidden flex items-center justify-center gap-2 px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm font-semibold text-slate-700 shadow-sm hover:bg-gray-50 transition-colors"
+                className="lg:hidden flex items-center justify-center gap-2 px-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm font-semibold text-zinc-700 shadow-sm hover:bg-gray-50 transition-colors"
               >
                 <SlidersHorizontal className="w-4 h-4 text-emerald-600" />
                 Filter Devices
@@ -209,8 +209,8 @@ export default function Home() {
                   </div>
                 ) : (
                   <div className="bg-white rounded-2xl border border-gray-200 p-12 text-center max-w-md mx-auto shadow-sm">
-                    <p className="text-slate-700 text-base font-semibold">No devices match your current filters.</p>
-                    <p className="text-slate-400 text-xs mt-1">Try adjusting the price slider or device parameters.</p>
+                    <p className="text-zinc-700 text-base font-semibold">No devices match your current filters.</p>
+                    <p className="text-zinc-400 text-xs mt-1">Try adjusting the price slider or device parameters.</p>
                     <button
                       onClick={() => {
                         setFilters({ deviceType: [], processor: [], ram: [], maxPrice: 100000 });
@@ -233,7 +233,7 @@ export default function Home() {
         </div>
 
         {/* ITAD Trade-In CTA Banner */}
-        <section className="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <section className="py-20 bg-zinc-950 text-white relative overflow-hidden">
           <div className="absolute inset-0 opacity-10" style={{
             backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
             backgroundSize: '32px 32px'
@@ -246,7 +246,7 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4 leading-tight">
               Liquidate or Trade In Your Corporate Hardware
             </h2>
-            <p className="text-slate-300 text-base sm:text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-zinc-300 text-base sm:text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
               Sell individual devices with instant algorithmic valuation, or offload 10+ company workstations with automated CSV manifest pickup and certified data sanitization.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">

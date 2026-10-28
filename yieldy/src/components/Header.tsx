@@ -25,14 +25,14 @@ export default function Header({ cartCount, onNavigate, activeSection, onOpenCar
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <button onClick={() => onNavigate('hero')} className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 bg-slate-900 rounded-xl flex items-center justify-center group-hover:bg-emerald-600 transition-colors shadow-sm">
+            <div className="w-9 h-9 bg-zinc-950 rounded-xl flex items-center justify-center group-hover:bg-emerald-600 transition-colors shadow-sm">
               <Recycle className="w-5 h-5 text-emerald-400 group-hover:text-white transition-colors" />
             </div>
             <div className="text-left">
-              <span className="text-xl font-extrabold tracking-tight text-slate-900 flex items-center gap-1">
+              <span className="text-xl font-extrabold tracking-tight text-zinc-900 flex items-center gap-1">
                 Yieldy<span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block"></span>
               </span>
-              <span className="block text-[10px] uppercase font-semibold tracking-wider text-slate-400 -mt-1">
+              <span className="block text-[10px] uppercase font-semibold tracking-wider text-zinc-400 -mt-1">
                 Circular ITAD
               </span>
             </div>
@@ -47,7 +47,7 @@ export default function Header({ cartCount, onNavigate, activeSection, onOpenCar
                 className={`text-sm font-semibold transition-colors ${
                   activeSection === item.key
                     ? 'text-emerald-600'
-                    : 'text-slate-600 hover:text-slate-900'
+                    : 'text-zinc-600 hover:text-zinc-900'
                 }`}
               >
                 {item.label}
@@ -66,10 +66,10 @@ export default function Header({ cartCount, onNavigate, activeSection, onOpenCar
           <div className="flex items-center gap-3">
             <button
               onClick={onOpenCart}
-              className="relative p-2.5 rounded-xl border border-gray-200 hover:border-emerald-300 hover:bg-emerald-50/50 transition-all text-slate-700"
+              className="relative p-2.5 rounded-xl border border-gray-200 hover:border-emerald-300 hover:bg-emerald-50/50 transition-all text-zinc-700"
               aria-label="View Cart"
             >
-              <ShoppingCart className="w-5 h-5 text-slate-700" />
+              <ShoppingCart className="w-5 h-5 text-zinc-700" />
               {cartCount > 0 && (
                 <span className="absolute -top-1 -right-1 w-5 h-5 bg-emerald-600 text-white text-[11px] font-bold rounded-full flex items-center justify-center shadow-sm animate-pulse">
                   {cartCount}
@@ -78,7 +78,7 @@ export default function Header({ cartCount, onNavigate, activeSection, onOpenCar
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-xl border border-gray-200 text-slate-700 hover:bg-gray-100 transition-colors"
+              className="md:hidden p-2 rounded-xl border border-gray-200 text-zinc-700 hover:bg-gray-100 transition-colors"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -92,7 +92,7 @@ export default function Header({ cartCount, onNavigate, activeSection, onOpenCar
               <button
                 key={item.key}
                 onClick={() => { onNavigate(item.key); setMobileMenuOpen(false); }}
-                className="block w-full text-left px-4 py-2.5 text-sm font-medium text-slate-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-xl transition-colors"
+                className="block w-full text-left px-4 py-2.5 text-sm font-medium text-zinc-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-xl transition-colors"
               >
                 {item.label}
               </button>

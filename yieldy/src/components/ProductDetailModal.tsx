@@ -40,14 +40,14 @@ function OptionPill({
         }`}>
           {selected && <Check className="w-2.5 h-2.5 text-white stroke-[3]" />}
         </div>
-        <span className={`text-sm font-medium ${selected ? 'text-emerald-900 font-semibold' : 'text-slate-700'}`}>
+        <span className={`text-sm font-medium ${selected ? 'text-emerald-900 font-semibold' : 'text-zinc-700'}`}>
           {label}
         </span>
       </div>
       <span className={`text-xs sm:text-sm font-semibold px-2 py-0.5 rounded-md ${
         price === 0 
           ? 'text-emerald-700 bg-emerald-100/60' 
-          : selected ? 'text-emerald-800 bg-emerald-100' : 'text-slate-600 bg-gray-100'
+          : selected ? 'text-emerald-800 bg-emerald-100' : 'text-zinc-600 bg-gray-100'
       }`}>
         {price === 0 ? 'Included' : `+₹${price.toLocaleString('en-IN')}`}
       </span>
@@ -77,16 +77,16 @@ function AccordionItem({
       >
         <div className="flex items-center gap-2">
           <Icon className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-          <span className="text-sm font-semibold text-slate-800">{title}</span>
+          <span className="text-sm font-semibold text-zinc-800">{title}</span>
         </div>
         {expanded ? (
-          <ChevronUp className="w-4 h-4 text-slate-400" />
+          <ChevronUp className="w-4 h-4 text-zinc-400" />
         ) : (
-          <ChevronDown className="w-4 h-4 text-slate-400" />
+          <ChevronDown className="w-4 h-4 text-zinc-400" />
         )}
       </button>
       {expanded && (
-        <div className="px-4 pb-4 text-xs sm:text-sm text-slate-600 border-t border-gray-100 pt-3 leading-relaxed">
+        <div className="px-4 pb-4 text-xs sm:text-sm text-zinc-600 border-t border-gray-100 pt-3 leading-relaxed">
           {children}
         </div>
       )}
@@ -137,7 +137,7 @@ export default function ProductDetailModal({ product, onClose, onAddToCart, onBu
       <div className="bg-white rounded-2xl max-w-5xl w-full shadow-2xl relative my-auto overflow-hidden border border-gray-100">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-white/90 hover:bg-gray-100 border border-gray-200 text-slate-600 transition-colors shadow-sm"
+          className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-white/90 hover:bg-gray-100 border border-gray-200 text-zinc-600 transition-colors shadow-sm"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />
@@ -147,7 +147,7 @@ export default function ProductDetailModal({ product, onClose, onAddToCart, onBu
           {/* Left: Product Info + Configurator */}
           <div className="lg:col-span-7 p-6 sm:p-8 lg:overflow-y-auto lg:max-h-[90vh]">
             <div className="flex flex-col sm:flex-row items-start gap-5 mb-8 pb-6 border-b border-gray-100">
-              <div className="relative w-full sm:w-40 h-40 rounded-xl overflow-hidden border border-gray-200 flex-shrink-0 bg-slate-50 p-2">
+              <div className="relative w-full sm:w-40 h-40 rounded-xl overflow-hidden border border-gray-200 flex-shrink-0 bg-zinc-50 p-2">
                 <Image
                   src={product.image}
                   alt={product.name}
@@ -159,15 +159,15 @@ export default function ProductDetailModal({ product, onClose, onAddToCart, onBu
               <div>
                 <div className="flex items-center gap-2 mb-1">
                   <span className="text-xs font-bold text-emerald-600 uppercase tracking-wider">{product.tier}</span>
-                  <span className="text-xs text-slate-300">·</span>
+                  <span className="text-xs text-zinc-300">·</span>
                   <span className="bg-emerald-100 text-emerald-800 text-xs font-semibold px-2 py-0.5 rounded-full">
                     {product.grade}
                   </span>
                 </div>
-                <h2 className="text-2xl font-bold text-slate-900 leading-tight">{product.name}</h2>
-                <p className="text-slate-500 text-sm mt-0.5">{product.subtitle}</p>
+                <h2 className="text-2xl font-bold text-zinc-900 leading-tight">{product.name}</h2>
+                <p className="text-zinc-500 text-sm mt-0.5">{product.subtitle}</p>
 
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-600 mt-3 pt-3 border-t border-gray-100">
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-zinc-600 mt-3 pt-3 border-t border-gray-100">
                   <span className="flex items-center gap-1"><Cpu className="w-3.5 h-3.5 text-emerald-600" /> {product.processor}</span>
                   <span className="flex items-center gap-1"><HardDrive className="w-3.5 h-3.5 text-emerald-600" /> Base {product.ram}GB / {product.storage}GB {product.storageType}</span>
                 </div>
@@ -177,10 +177,10 @@ export default function ProductDetailModal({ product, onClose, onAddToCart, onBu
             {/* RAM Upgrade Selector */}
             <div className="mb-6">
               <div className="flex items-center justify-between mb-2.5">
-                <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
+                <h3 className="text-xs font-bold text-zinc-900 uppercase tracking-wider">
                   1. Memory (RAM) Customization
                 </h3>
-                <span className="text-xs text-slate-400">Tested DDR4/DDR5</span>
+                <span className="text-xs text-zinc-400">Tested DDR4/DDR5</span>
               </div>
               <div className="space-y-2">
                 {availableRamUpgrades.map((upgrade, idx) => (
@@ -198,10 +198,10 @@ export default function ProductDetailModal({ product, onClose, onAddToCart, onBu
             {/* Storage Upgrade Selector */}
             <div className="mb-6">
               <div className="flex items-center justify-between mb-2.5">
-                <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
+                <h3 className="text-xs font-bold text-zinc-900 uppercase tracking-wider">
                   2. High-Speed Storage (NVMe SSD)
                 </h3>
-                <span className="text-xs text-slate-400">SMART Verified 100% Health</span>
+                <span className="text-xs text-zinc-400">SMART Verified 100% Health</span>
               </div>
               <div className="space-y-2">
                 {availableStorageUpgrades.map((upgrade, idx) => (
@@ -219,10 +219,10 @@ export default function ProductDetailModal({ product, onClose, onAddToCart, onBu
             {/* Operating System Options */}
             <div className="mb-6">
               <div className="flex items-center justify-between mb-2.5">
-                <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
+                <h3 className="text-xs font-bold text-zinc-900 uppercase tracking-wider">
                   3. Operating System Setup
                 </h3>
-                <span className="text-xs text-slate-400">Clean Pre-Installed & Driver Verified</span>
+                <span className="text-xs text-zinc-400">Clean Pre-Installed & Driver Verified</span>
               </div>
               <div className="space-y-2">
                 {osOptions.map((opt, idx) => (
@@ -240,10 +240,10 @@ export default function ProductDetailModal({ product, onClose, onAddToCart, onBu
             {/* Warranty & Assurance */}
             <div className="mb-6">
               <div className="flex items-center justify-between mb-2.5">
-                <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
+                <h3 className="text-xs font-bold text-zinc-900 uppercase tracking-wider">
                   4. Warranty & Support Plan
                 </h3>
-                <span className="text-xs text-slate-400">Pan-India Support</span>
+                <span className="text-xs text-zinc-400">Pan-India Support</span>
               </div>
               <div className="space-y-2">
                 {warrantyOptions.map((opt, idx) => (
@@ -260,10 +260,10 @@ export default function ProductDetailModal({ product, onClose, onAddToCart, onBu
           </div>
 
           {/* Right: Sticky Summary Card */}
-          <div className="lg:col-span-5 bg-slate-50 p-6 sm:p-8 border-t lg:border-t-0 lg:border-l border-gray-200 flex flex-col justify-between lg:overflow-y-auto lg:max-h-[90vh]">
+          <div className="lg:col-span-5 bg-zinc-50 p-6 sm:p-8 border-t lg:border-t-0 lg:border-l border-gray-200 flex flex-col justify-between lg:overflow-y-auto lg:max-h-[90vh]">
             <div>
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-base font-bold text-slate-900">Live Configuration Summary</h3>
+                <h3 className="text-base font-bold text-zinc-900">Live Configuration Summary</h3>
                 <span className="text-xs text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
                   Ready to Dispatch
                 </span>
@@ -271,42 +271,42 @@ export default function ProductDetailModal({ product, onClose, onAddToCart, onBu
               
               <div className="bg-white rounded-xl border border-gray-200 p-4 space-y-2.5 mb-6 text-xs sm:text-sm">
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Base Unit ({product.name})</span>
-                  <span className="font-semibold text-slate-800">₹{product.basePrice.toLocaleString('en-IN')}</span>
+                  <span className="text-zinc-500">Base Unit ({product.name})</span>
+                  <span className="font-semibold text-zinc-800">₹{product.basePrice.toLocaleString('en-IN')}</span>
                 </div>
                 
                 <div className="flex justify-between border-t border-gray-100 pt-2">
-                  <span className="text-slate-500">
-                    RAM: <span className="text-slate-700 font-medium">{availableRamUpgrades[config.ramUpgrade]?.label}</span>
+                  <span className="text-zinc-500">
+                    RAM: <span className="text-zinc-700 font-medium">{availableRamUpgrades[config.ramUpgrade]?.label}</span>
                   </span>
-                  <span className="font-semibold text-slate-800">
+                  <span className="font-semibold text-zinc-800">
                     {availableRamUpgrades[config.ramUpgrade]?.price === 0 ? '₹0' : `+₹${availableRamUpgrades[config.ramUpgrade]?.price.toLocaleString('en-IN')}`}
                   </span>
                 </div>
 
                 <div className="flex justify-between border-t border-gray-100 pt-2">
-                  <span className="text-slate-500">
-                    SSD: <span className="text-slate-700 font-medium">{availableStorageUpgrades[config.storageUpgrade]?.label}</span>
+                  <span className="text-zinc-500">
+                    SSD: <span className="text-zinc-700 font-medium">{availableStorageUpgrades[config.storageUpgrade]?.label}</span>
                   </span>
-                  <span className="font-semibold text-slate-800">
+                  <span className="font-semibold text-zinc-800">
                     {availableStorageUpgrades[config.storageUpgrade]?.price === 0 ? '₹0' : `+₹${availableStorageUpgrades[config.storageUpgrade]?.price.toLocaleString('en-IN')}`}
                   </span>
                 </div>
 
                 <div className="flex justify-between border-t border-gray-100 pt-2">
-                  <span className="text-slate-500">
-                    OS: <span className="text-slate-700 font-medium">{osOptions[config.os]?.label}</span>
+                  <span className="text-zinc-500">
+                    OS: <span className="text-zinc-700 font-medium">{osOptions[config.os]?.label}</span>
                   </span>
-                  <span className="font-semibold text-slate-800">
+                  <span className="font-semibold text-zinc-800">
                     {osOptions[config.os]?.price === 0 ? '₹0' : `+₹${osOptions[config.os]?.price.toLocaleString('en-IN')}`}
                   </span>
                 </div>
 
                 <div className="flex justify-between border-t border-gray-100 pt-2">
-                  <span className="text-slate-500">
-                    Plan: <span className="text-slate-700 font-medium">{warrantyOptions[config.warranty]?.label}</span>
+                  <span className="text-zinc-500">
+                    Plan: <span className="text-zinc-700 font-medium">{warrantyOptions[config.warranty]?.label}</span>
                   </span>
-                  <span className="font-semibold text-slate-800">
+                  <span className="font-semibold text-zinc-800">
                     {warrantyOptions[config.warranty]?.price === 0 ? '₹0' : `+₹${warrantyOptions[config.warranty]?.price.toLocaleString('en-IN')}`}
                   </span>
                 </div>
@@ -316,11 +316,11 @@ export default function ProductDetailModal({ product, onClose, onAddToCart, onBu
               <div className="border-t border-gray-200 pt-4 mb-4">
                 <div className="flex justify-between items-baseline">
                   <div>
-                    <span className="text-xs uppercase tracking-wider font-semibold text-slate-400">Total Price</span>
-                    <p className="text-xs text-slate-500">Includes all taxes & warranty</p>
+                    <span className="text-xs uppercase tracking-wider font-semibold text-zinc-400">Total Price</span>
+                    <p className="text-xs text-zinc-500">Includes all taxes & warranty</p>
                   </div>
                   <div className="text-right">
-                    <span className="text-3xl font-extrabold text-slate-900">₹{correctTotal.toLocaleString('en-IN')}</span>
+                    <span className="text-3xl font-extrabold text-zinc-900">₹{correctTotal.toLocaleString('en-IN')}</span>
                   </div>
                 </div>
                 <div className="bg-emerald-50 text-emerald-800 rounded-lg px-3 py-1.5 mt-2.5 text-xs flex items-center justify-between font-medium">
@@ -330,18 +330,18 @@ export default function ProductDetailModal({ product, onClose, onAddToCart, onBu
               </div>
 
               {/* Included Free Perks Box */}
-              <div className="bg-slate-100/80 rounded-xl p-3.5 mb-5 border border-slate-200">
-                <p className="text-xs font-bold text-slate-800 mb-2 uppercase tracking-wider">Included Free in Box:</p>
+              <div className="bg-zinc-100/80 rounded-xl p-3.5 mb-5 border border-zinc-200">
+                <p className="text-xs font-bold text-zinc-800 mb-2 uppercase tracking-wider">Included Free in Box:</p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                  <div className="flex items-center gap-1.5 text-xs text-slate-600">
+                  <div className="flex items-center gap-1.5 text-xs text-zinc-600">
                     <Package className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
                     <span>OEM Charger</span>
                   </div>
-                  <div className="flex items-center gap-1.5 text-xs text-slate-600">
+                  <div className="flex items-center gap-1.5 text-xs text-zinc-600">
                     <FileCheck className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
                     <span>Blancco Report</span>
                   </div>
-                  <div className="flex items-center gap-1.5 text-xs text-slate-600">
+                  <div className="flex items-center gap-1.5 text-xs text-zinc-600">
                     <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
                     <span>Cleaning Kit</span>
                   </div>
@@ -353,7 +353,7 @@ export default function ProductDetailModal({ product, onClose, onAddToCart, onBu
                 <button
                   type="button"
                   onClick={() => onAddToCart(product, config, correctTotal)}
-                  className="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3.5 rounded-xl transition-all shadow-sm active:scale-98"
+                  className="w-full bg-zinc-950 hover:bg-zinc-900 text-white font-semibold py-3.5 rounded-xl transition-all shadow-sm active:scale-98"
                 >
                   Add Configured Unit to Cart
                 </button>
@@ -376,7 +376,7 @@ export default function ProductDetailModal({ product, onClose, onAddToCart, onBu
                   onToggle={() => setExpandedAccordion(expandedAccordion === 'diagnostic' ? null : 'diagnostic')}
                 >
                   <p className="mb-2">Every machine is verified across 50 rigorous hardware stress points:</p>
-                  <ul className="list-disc list-inside space-y-1 text-xs text-slate-600">
+                  <ul className="list-disc list-inside space-y-1 text-xs text-zinc-600">
                     <li>Intel BurnIn / Prime95 CPU stress test under 100% thermals</li>
                     <li>MemTest86+ full RAM parity & timing verification</li>
                     <li>NVMe read/write speed & SMART zero-bad-sector audit</li>

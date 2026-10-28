@@ -33,7 +33,7 @@ function FilterCheckbox({
         onChange={onChange}
         className="w-4 h-4 rounded border-gray-300 text-emerald-600 focus:ring-emerald-500 cursor-pointer"
       />
-      <span className="text-sm text-slate-600 group-hover:text-slate-900 transition-colors">{label}</span>
+      <span className="text-sm text-zinc-600 group-hover:text-zinc-900 transition-colors">{label}</span>
     </label>
   );
 }
@@ -64,16 +64,16 @@ export default function FilterSidebar({ filters, onFilterChange, isOpen, onClose
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
             <SlidersHorizontal className="w-5 h-5 text-emerald-600" />
-            <h2 className="text-lg font-bold text-slate-900">Filter Hardware</h2>
+            <h2 className="text-lg font-bold text-zinc-900">Filter Hardware</h2>
           </div>
-          <button onClick={onClose} className="lg:hidden p-1 text-slate-500 hover:text-slate-700">
+          <button onClick={onClose} className="lg:hidden p-1 text-zinc-500 hover:text-zinc-700">
             <X className="w-5 h-5" />
           </button>
         </div>
 
         <div className="space-y-6">
           <div>
-            <h3 className="text-xs font-bold text-slate-900 mb-3 uppercase tracking-wider">Device Form Factor</h3>
+            <h3 className="text-xs font-bold text-zinc-900 mb-3 uppercase tracking-wider">Device Form Factor</h3>
             <div className="space-y-2.5">
               <FilterCheckbox
                 checked={filters.deviceType.includes('Laptop')}
@@ -89,7 +89,7 @@ export default function FilterSidebar({ filters, onFilterChange, isOpen, onClose
           </div>
 
           <div className="border-t border-gray-100 pt-5">
-            <h3 className="text-xs font-bold text-slate-900 mb-3 uppercase tracking-wider">Processor Family</h3>
+            <h3 className="text-xs font-bold text-zinc-900 mb-3 uppercase tracking-wider">Processor Family</h3>
             <div className="space-y-2.5">
               <FilterCheckbox
                 checked={filters.processor.includes('i5')}
@@ -115,7 +115,7 @@ export default function FilterSidebar({ filters, onFilterChange, isOpen, onClose
           </div>
 
           <div className="border-t border-gray-100 pt-5">
-            <h3 className="text-xs font-bold text-slate-900 mb-3 uppercase tracking-wider">System Memory</h3>
+            <h3 className="text-xs font-bold text-zinc-900 mb-3 uppercase tracking-wider">System Memory</h3>
             <div className="space-y-2.5">
               <FilterCheckbox
                 checked={filters.ram.includes('8')}
@@ -137,7 +137,7 @@ export default function FilterSidebar({ filters, onFilterChange, isOpen, onClose
 
           <div className="border-t border-gray-100 pt-5">
             <div className="flex justify-between items-center mb-2">
-              <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider">Budget Ceiling</h3>
+              <h3 className="text-xs font-bold text-zinc-900 uppercase tracking-wider">Budget Ceiling</h3>
               <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-md">
                 ₹{filters.maxPrice.toLocaleString('en-IN')}
               </span>
@@ -152,8 +152,8 @@ export default function FilterSidebar({ filters, onFilterChange, isOpen, onClose
               className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
             />
             <div className="flex justify-between mt-2">
-              <span className="text-[11px] text-slate-400">₹15,000</span>
-              <span className="text-[11px] text-slate-400">₹1,00,000</span>
+              <span className="text-[11px] text-zinc-400">₹15,000</span>
+              <span className="text-[11px] text-zinc-400">₹1,00,000</span>
             </div>
           </div>
 
@@ -164,7 +164,7 @@ export default function FilterSidebar({ filters, onFilterChange, isOpen, onClose
               ram: [],
               maxPrice: 100000,
             })}
-            className="w-full text-xs font-semibold text-slate-600 hover:text-emerald-700 py-2.5 border border-gray-200 rounded-xl hover:bg-emerald-50 hover:border-emerald-200 transition-colors"
+            className="w-full text-xs font-semibold text-zinc-600 hover:text-emerald-700 py-2.5 border border-gray-200 rounded-xl hover:bg-emerald-50 hover:border-emerald-200 transition-colors"
           >
             Reset All Filters
           </button>

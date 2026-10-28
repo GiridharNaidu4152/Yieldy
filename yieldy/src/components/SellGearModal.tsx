@@ -142,8 +142,8 @@ function DeviceCard({
           : 'border-gray-200 bg-white hover:border-gray-300'
       }`}
     >
-      <Icon className={`w-10 h-10 ${selected ? 'text-emerald-600' : 'text-slate-400'}`} />
-      <span className={`text-sm font-semibold ${selected ? 'text-emerald-700' : 'text-slate-600'}`}>
+      <Icon className={`w-10 h-10 ${selected ? 'text-emerald-600' : 'text-zinc-400'}`} />
+      <span className={`text-sm font-semibold ${selected ? 'text-emerald-700' : 'text-zinc-600'}`}>
         {label}
       </span>
     </button>
@@ -163,11 +163,11 @@ function SelectField({
 }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-slate-700 mb-1.5">{label}</label>
+      <label className="block text-sm font-medium text-zinc-700 mb-1.5">{label}</label>
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm text-slate-700 bg-white focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none cursor-pointer"
+        className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm text-zinc-700 bg-white focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none cursor-pointer"
       >
         <option value="">Select from list...</option>
         {options.map((opt) => (
@@ -209,7 +209,7 @@ function ConditionRadio({
       }`}>
         {isSelected && <div className="w-2 h-2 rounded-full bg-emerald-600" />}
       </div>
-      <span className={`text-sm ${isSelected ? 'text-emerald-700 font-medium' : 'text-slate-600'}`}>{label}</span>
+      <span className={`text-sm ${isSelected ? 'text-emerald-700 font-medium' : 'text-zinc-600'}`}>{label}</span>
     </label>
   );
 }
@@ -309,14 +309,14 @@ export default function SellGearModal({ onClose }: SellGearModalProps) {
     <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/50 backdrop-blur-sm overflow-y-auto p-4 pt-8 pb-8">
       <div className="bg-white rounded-2xl max-w-2xl w-full shadow-2xl relative my-auto border border-gray-100">
         <button onClick={onClose} className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/80 hover:bg-gray-100 transition-colors">
-          <X className="w-5 h-5 text-slate-600" />
+          <X className="w-5 h-5 text-zinc-600" />
         </button>
 
         <div className="p-6 lg:p-8">
           <div className="flex items-center gap-2 mb-1">
-            <h2 className="text-2xl font-bold text-slate-900">Sell Your Hardware / ITAD Trade-In</h2>
+            <h2 className="text-2xl font-bold text-zinc-900">Sell Your Hardware / ITAD Trade-In</h2>
           </div>
-          <p className="text-sm text-slate-500 mb-6">Select your exact laptop model or enter corporate asset inquiries</p>
+          <p className="text-sm text-zinc-500 mb-6">Select your exact laptop model or enter corporate asset inquiries</p>
 
           {/* Progress bar */}
           <div className="flex gap-2 mb-8">
@@ -327,10 +327,10 @@ export default function SellGearModal({ onClose }: SellGearModalProps) {
 
           {/* Bulk toggle */}
           {step === 1 && (
-            <div className="flex items-center justify-between bg-slate-50 rounded-xl p-4 mb-6 border border-slate-200/60">
+            <div className="flex items-center justify-between bg-zinc-50 rounded-xl p-4 mb-6 border border-zinc-200/60">
               <div className="flex items-center gap-2">
-                <Building2 className="w-5 h-5 text-slate-600" />
-                <span className="text-sm font-medium text-slate-700">Have 10+ devices? Switch to B2B ITAD</span>
+                <Building2 className="w-5 h-5 text-zinc-600" />
+                <span className="text-sm font-medium text-zinc-700">Have 10+ devices? Switch to B2B ITAD</span>
               </div>
               <button
                 type="button"
@@ -345,33 +345,33 @@ export default function SellGearModal({ onClose }: SellGearModalProps) {
           {isBulk ? (
             /* Bulk / B2B Mode */
             <div className="space-y-4">
-              <div className="border-2 border-dashed border-gray-300 rounded-2xl p-8 text-center hover:border-emerald-400 transition-colors cursor-pointer bg-slate-50/50">
-                <Upload className="w-10 h-10 text-slate-400 mx-auto mb-3" />
-                <p className="text-sm font-semibold text-slate-700">Drag & Drop CSV Asset List</p>
-                <p className="text-xs text-slate-400 mt-1">Upload company hardware asset list or fleet manifest</p>
+              <div className="border-2 border-dashed border-gray-300 rounded-2xl p-8 text-center hover:border-emerald-400 transition-colors cursor-pointer bg-zinc-50/50">
+                <Upload className="w-10 h-10 text-zinc-400 mx-auto mb-3" />
+                <p className="text-sm font-semibold text-zinc-700">Drag & Drop CSV Asset List</p>
+                <p className="text-xs text-zinc-400 mt-1">Upload company hardware asset list or fleet manifest</p>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-1.5">Company Name</label>
+                  <label className="block text-sm font-medium text-zinc-700 mb-1.5">Company Name</label>
                   <input type="text" value={bulkForm.companyName} onChange={(e) => setBulkForm({ ...bulkForm, companyName: e.target.value })} className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Acme Technologies" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-1.5">IT Head Email</label>
+                  <label className="block text-sm font-medium text-zinc-700 mb-1.5">IT Head Email</label>
                   <input type="email" value={bulkForm.email} onChange={(e) => setBulkForm({ ...bulkForm, email: e.target.value })} className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-emerald-500" placeholder="it.director@company.com" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-1.5">City</label>
+                  <label className="block text-sm font-medium text-zinc-700 mb-1.5">City</label>
                   <input type="text" value={bulkForm.city} onChange={(e) => setBulkForm({ ...bulkForm, city: e.target.value })} className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Bengaluru / Mumbai" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-1.5">Expected Pickup Date</label>
+                  <label className="block text-sm font-medium text-zinc-700 mb-1.5">Expected Pickup Date</label>
                   <input type="date" value={bulkForm.pickupDate} onChange={(e) => setBulkForm({ ...bulkForm, pickupDate: e.target.value })} className="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm outline-none focus:ring-2 focus:ring-emerald-500" />
                 </div>
               </div>
               <button
                 type="button"
                 onClick={() => alert('Corporate ITAD request received! A Yieldy enterprise disposition manager will contact you within 2 business hours.')}
-                className="w-full bg-slate-900 hover:bg-emerald-600 text-white font-semibold py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm"
+                className="w-full bg-zinc-950 hover:bg-emerald-600 text-white font-semibold py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm"
               >
                 Submit Enterprise ITAD Inquiry <ArrowRight className="w-4 h-4" />
               </button>
@@ -409,8 +409,8 @@ export default function SellGearModal({ onClose }: SellGearModalProps) {
                   </div>
 
                   {/* 1-Tap Quick Select Pills for Top Enterprise Laptops */}
-                  <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-4">
-                    <div className="flex items-center gap-1.5 text-xs font-bold text-slate-800 uppercase tracking-wider mb-2.5">
+                  <div className="bg-zinc-50 border border-zinc-200/80 rounded-2xl p-4">
+                    <div className="flex items-center gap-1.5 text-xs font-bold text-zinc-800 uppercase tracking-wider mb-2.5">
                       <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
                       Quick-Select Popular Laptops
                     </div>
@@ -420,7 +420,7 @@ export default function SellGearModal({ onClose }: SellGearModalProps) {
                           key={item.label}
                           type="button"
                           onClick={() => handleSelectPopularPill(item)}
-                          className="px-3 py-1.5 bg-white hover:bg-emerald-50 hover:border-emerald-300 border border-gray-200 text-xs font-medium text-slate-700 rounded-lg transition-colors cursor-pointer"
+                          className="px-3 py-1.5 bg-white hover:bg-emerald-50 hover:border-emerald-300 border border-gray-200 text-xs font-medium text-zinc-700 rounded-lg transition-colors cursor-pointer"
                         >
                           {item.label}
                         </button>
@@ -435,7 +435,7 @@ export default function SellGearModal({ onClose }: SellGearModalProps) {
                 <div className="space-y-5">
                   {/* Brand Selector */}
                   <div>
-                    <label className="block text-sm font-semibold text-slate-800 mb-2">1. Select Manufacturer / Brand</label>
+                    <label className="block text-sm font-semibold text-zinc-800 mb-2">1. Select Manufacturer / Brand</label>
                     <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 mb-3">
                       {(form.deviceType ? brands[form.deviceType] || [] : []).map((b) => (
                         <button
@@ -445,7 +445,7 @@ export default function SellGearModal({ onClose }: SellGearModalProps) {
                           className={`px-3 py-2 text-xs font-semibold rounded-xl border text-center transition-all cursor-pointer ${
                             form.brand === b
                               ? 'border-emerald-600 bg-emerald-50 text-emerald-800 font-bold shadow-xs'
-                              : 'border-gray-200 bg-white text-slate-700 hover:border-gray-300 hover:bg-gray-50'
+                              : 'border-gray-200 bg-white text-zinc-700 hover:border-gray-300 hover:bg-gray-50'
                           }`}
                         >
                           {b}
@@ -480,8 +480,8 @@ export default function SellGearModal({ onClose }: SellGearModalProps) {
 
                   {/* Open Model / Custom Input (Always available so any user can type or clarify their exact laptop model) */}
                   {form.brand && (
-                    <div className="bg-slate-50 border border-slate-200/80 rounded-xl p-3.5">
-                      <label className="block text-xs font-semibold text-slate-700 mb-1">
+                    <div className="bg-zinc-50 border border-zinc-200/80 rounded-xl p-3.5">
+                      <label className="block text-xs font-semibold text-zinc-700 mb-1">
                         Exact Model Number or Sub-variant (Optional or if not listed above)
                       </label>
                       <input
@@ -491,19 +491,19 @@ export default function SellGearModal({ onClose }: SellGearModalProps) {
                         placeholder="e.g. ThinkPad T14 Gen 2 (Type 20W0), Latitude 7420 Carbon, 14-inch M1 Pro 2021..."
                         className="w-full px-3.5 py-2 text-xs sm:text-sm bg-white border border-gray-200 rounded-lg outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                       />
-                      <p className="text-[11px] text-slate-400 mt-1">You can specify any exact laptop model or sub-variant here.</p>
+                      <p className="text-[11px] text-zinc-400 mt-1">You can specify any exact laptop model or sub-variant here.</p>
                     </div>
                   )}
 
                   <div className="flex gap-3 pt-2">
-                    <button type="button" onClick={() => setStep(1)} className="flex-1 py-2.5 rounded-xl border border-gray-200 text-sm font-medium text-slate-600 hover:bg-gray-50 transition-colors cursor-pointer">
+                    <button type="button" onClick={() => setStep(1)} className="flex-1 py-2.5 rounded-xl border border-gray-200 text-sm font-medium text-zinc-600 hover:bg-gray-50 transition-colors cursor-pointer">
                       Back
                     </button>
                     <button
                       type="button"
                       onClick={() => setStep(3)}
                       disabled={!form.brand}
-                      className="flex-1 py-2.5 rounded-xl bg-slate-900 text-white text-sm font-semibold hover:bg-emerald-600 transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-1 cursor-pointer"
+                      className="flex-1 py-2.5 rounded-xl bg-zinc-950 text-white text-sm font-semibold hover:bg-emerald-600 transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-1 cursor-pointer"
                     >
                       Next: Hardware Specs <ChevronRight className="w-4 h-4" />
                     </button>
@@ -546,8 +546,8 @@ export default function SellGearModal({ onClose }: SellGearModalProps) {
                     />
                   </div>
                   <div className="flex gap-3 pt-2">
-                    <button type="button" onClick={() => setStep(2)} className="flex-1 py-2.5 rounded-xl border border-gray-200 text-sm font-medium text-slate-600 hover:bg-gray-50 transition-colors cursor-pointer">Back</button>
-                    <button type="button" onClick={() => setStep(4)} disabled={!form.processorGen || !form.ram} className="flex-1 py-2.5 rounded-xl bg-slate-900 text-white text-sm font-semibold hover:bg-emerald-600 transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-1 cursor-pointer">
+                    <button type="button" onClick={() => setStep(2)} className="flex-1 py-2.5 rounded-xl border border-gray-200 text-sm font-medium text-zinc-600 hover:bg-gray-50 transition-colors cursor-pointer">Back</button>
+                    <button type="button" onClick={() => setStep(4)} disabled={!form.processorGen || !form.ram} className="flex-1 py-2.5 rounded-xl bg-zinc-950 text-white text-sm font-semibold hover:bg-emerald-600 transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-1 cursor-pointer">
                       Next: Condition Audit <ChevronRight className="w-4 h-4" />
                     </button>
                   </div>
@@ -558,7 +558,7 @@ export default function SellGearModal({ onClose }: SellGearModalProps) {
               {step === 4 && (
                 <div className="space-y-5">
                   <div>
-                    <p className="text-sm font-medium text-slate-700 mb-2">Power Status</p>
+                    <p className="text-sm font-medium text-zinc-700 mb-2">Power Status</p>
                     <div className="space-y-2">
                       <ConditionRadio name="power" value="normal" currentValue={form.powerStatus} label="Powers on normally" onChange={(v) => setForm({ ...form, powerStatus: v })} />
                       <ConditionRadio name="power" value="intermittent" currentValue={form.powerStatus} label="Intermittent / Unstable" onChange={(v) => setForm({ ...form, powerStatus: v })} />
@@ -568,7 +568,7 @@ export default function SellGearModal({ onClose }: SellGearModalProps) {
                   {form.deviceType === 'laptop' && (
                     <>
                       <div>
-                        <p className="text-sm font-medium text-slate-700 mb-2">Screen Condition</p>
+                        <p className="text-sm font-medium text-zinc-700 mb-2">Screen Condition</p>
                         <div className="space-y-2">
                           <ConditionRadio name="screen" value="flawless" currentValue={form.screenCondition} label="Flawless (No scratches/marks)" onChange={(v) => setForm({ ...form, screenCondition: v })} />
                           <ConditionRadio name="screen" value="minor" currentValue={form.screenCondition} label="Minor cosmetic scratches" onChange={(v) => setForm({ ...form, screenCondition: v })} />
@@ -576,7 +576,7 @@ export default function SellGearModal({ onClose }: SellGearModalProps) {
                         </div>
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-slate-700 mb-2">Battery Health</p>
+                        <p className="text-sm font-medium text-zinc-700 mb-2">Battery Health</p>
                         <div className="space-y-2">
                           <ConditionRadio name="battery" value="good" currentValue={form.batteryHealth} label="Normal (>80% design capacity)" onChange={(v) => setForm({ ...form, batteryHealth: v })} />
                           <ConditionRadio name="battery" value="service" currentValue={form.batteryHealth} label="Service Recommended" onChange={(v) => setForm({ ...form, batteryHealth: v })} />
@@ -586,15 +586,15 @@ export default function SellGearModal({ onClose }: SellGearModalProps) {
                     </>
                   )}
                   <div>
-                    <p className="text-sm font-medium text-slate-700 mb-2">Keyboard & Ports</p>
+                    <p className="text-sm font-medium text-zinc-700 mb-2">Keyboard & Ports</p>
                     <div className="space-y-2">
                       <ConditionRadio name="keyboard" value="working" currentValue={form.keyboardPorts} label="All working perfectly" onChange={(v) => setForm({ ...form, keyboardPorts: v })} />
                       <ConditionRadio name="keyboard" value="faulty" currentValue={form.keyboardPorts} label="Few keys or ports faulty" onChange={(v) => setForm({ ...form, keyboardPorts: v })} />
                     </div>
                   </div>
                   <div className="flex gap-3 pt-2">
-                    <button type="button" onClick={() => setStep(3)} className="flex-1 py-2.5 rounded-xl border border-gray-200 text-sm font-medium text-slate-600 hover:bg-gray-50 transition-colors cursor-pointer">Back</button>
-                    <button type="button" onClick={() => setStep(5)} disabled={!form.powerStatus || !form.keyboardPorts} className="flex-1 py-2.5 rounded-xl bg-slate-900 text-white text-sm font-semibold hover:bg-emerald-600 transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-1 cursor-pointer">
+                    <button type="button" onClick={() => setStep(3)} className="flex-1 py-2.5 rounded-xl border border-gray-200 text-sm font-medium text-zinc-600 hover:bg-gray-50 transition-colors cursor-pointer">Back</button>
+                    <button type="button" onClick={() => setStep(5)} disabled={!form.powerStatus || !form.keyboardPorts} className="flex-1 py-2.5 rounded-xl bg-zinc-950 text-white text-sm font-semibold hover:bg-emerald-600 transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-1 cursor-pointer">
                       Calculate Valuation <ChevronRight className="w-4 h-4" />
                     </button>
                   </div>
@@ -608,14 +608,14 @@ export default function SellGearModal({ onClose }: SellGearModalProps) {
                     <span className="text-xs font-bold text-emerald-700 uppercase tracking-wider bg-emerald-100/60 px-3 py-1 rounded-full">
                       Algorithmic Market Valuation
                     </span>
-                    <p className="text-sm font-medium text-slate-500 mt-3 mb-1">Estimated Direct Payout Range</p>
+                    <p className="text-sm font-medium text-zinc-500 mt-3 mb-1">Estimated Direct Payout Range</p>
                     <div className="flex items-center justify-center gap-1 mb-1">
                       <IndianRupee className="w-8 h-8 text-emerald-600" />
-                      <span className="text-4xl font-extrabold text-slate-900">{estimatedValue.low.toLocaleString('en-IN')}</span>
-                      <span className="text-2xl text-slate-400 mx-2">–</span>
-                      <span className="text-4xl font-extrabold text-slate-900">₹{estimatedValue.high.toLocaleString('en-IN')}</span>
+                      <span className="text-4xl font-extrabold text-zinc-900">{estimatedValue.low.toLocaleString('en-IN')}</span>
+                      <span className="text-2xl text-zinc-400 mx-2">–</span>
+                      <span className="text-4xl font-extrabold text-zinc-900">₹{estimatedValue.high.toLocaleString('en-IN')}</span>
                     </div>
-                    <p className="text-xs text-slate-600 mt-2 font-medium">
+                    <p className="text-xs text-zinc-600 mt-2 font-medium">
                       {form.brand} {form.specificModel || form.customModel || form.series} · {form.processorGen} · {form.ram} RAM · {form.storageSize} {form.storageType}
                     </p>
                   </div>
@@ -625,9 +625,9 @@ export default function SellGearModal({ onClose }: SellGearModalProps) {
                       type="button"
                       className="p-5 rounded-2xl border-2 border-gray-200 hover:border-emerald-600 transition-all text-left bg-white group cursor-pointer"
                     >
-                      <IndianRupee className="w-6 h-6 text-slate-400 group-hover:text-emerald-600 mb-2 transition-colors" />
-                      <p className="text-sm font-bold text-slate-800">Instant Direct Bank Transfer</p>
-                      <p className="text-xs text-slate-400 mt-1">Direct NEFT / UPI transfer within 24 hours of doorstep pickup.</p>
+                      <IndianRupee className="w-6 h-6 text-zinc-400 group-hover:text-emerald-600 mb-2 transition-colors" />
+                      <p className="text-sm font-bold text-zinc-800">Instant Direct Bank Transfer</p>
+                      <p className="text-xs text-zinc-400 mt-1">Direct NEFT / UPI transfer within 24 hours of doorstep pickup.</p>
                     </button>
                     <button
                       type="button"
@@ -646,7 +646,7 @@ export default function SellGearModal({ onClose }: SellGearModalProps) {
                   >
                     Schedule Free Doorstep Pickup <ArrowRight className="w-4 h-4" />
                   </button>
-                  <button type="button" onClick={() => setStep(1)} className="w-full mt-3 py-2 text-xs text-slate-400 hover:text-slate-600 transition-colors">
+                  <button type="button" onClick={() => setStep(1)} className="w-full mt-3 py-2 text-xs text-zinc-400 hover:text-zinc-600 transition-colors">
                     Reset & Value Another Device
                   </button>
                 </div>

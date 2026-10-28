@@ -41,8 +41,8 @@ export default function WhyYieldy() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="text-sm font-semibold text-emerald-600 uppercase tracking-wider">Why Yieldy</span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Not Just Refurbished. Re-Certified.</h2>
-          <p className="text-slate-500 mt-3 max-w-xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 mt-2">Not Just Refurbished. Re-Certified.</h2>
+          <p className="text-zinc-500 mt-3 max-w-xl mx-auto">
             Every device goes through our enterprise-grade certification pipeline before it reaches you.
           </p>
         </div>
@@ -53,8 +53,8 @@ export default function WhyYieldy() {
               <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-4">
                 <reason.icon className="w-6 h-6 text-emerald-600" />
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">{reason.title}</h3>
-              <p className="text-sm text-slate-500 leading-relaxed">{reason.description}</p>
+              <h3 className="text-lg font-bold text-zinc-900 mb-2">{reason.title}</h3>
+              <p className="text-sm text-zinc-500 leading-relaxed">{reason.description}</p>
             </div>
           ))}
         </div>
